@@ -17,14 +17,14 @@
           <li class="has-children">
             <a href="services.html">Pages</a>
             <ul class="dropdown">
-              <li><a href="services.html">Services</a></li>
-              <li><a href="service-single.html">Service Single</a></li>
-              <li><a href="blog-single.html">Blog Single</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="portfolio-single.html">Portfolio Single</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li><a href="faq.html">Frequently Ask Questions</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
+              <li><%= link_to "Services", services_pages_path%></li>
+              <li><%= link_to "Single Services", single_services_pages_path%></li>
+              <li><%= link_to "Single Blog", blog_single_pages_path%></li>
+              <li><%= link_to "Portfolio", protfolio_pages_path%></li>
+              <li><%= link_to "Portfolio Single", protfolio_single_pages_path%></li>
+              <li><%= link_to "Testimonials", testmonials_pages_path%></li>
+              <li><%= link_to "Frequently Ask Questions", ask_questions_pages_path%></li>
+              <li><%= link_to "Gallery", gallery_pages_path%></li>
             </ul>
           </li>
           <li><a href="/blog">Blog</a></li>
