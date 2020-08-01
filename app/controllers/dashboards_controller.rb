@@ -1,4 +1,4 @@
-class DashboardController < ApplicationController
+class DashboardsController < ApplicationController
   # before_action :authenticate_user!, only: [:post_job]
 
   def index
@@ -20,6 +20,9 @@ class DashboardController < ApplicationController
   end
 
   def blog
+  end
+
+  def job_listing
   end
 
 end

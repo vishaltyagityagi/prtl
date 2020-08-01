@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'dashboard#index'
-  get 'about_us' => 'dashboard#about_us'
-  get 'contact_us' => 'dashboard#contact_us'
+  root 'dashboards#index'
+  resources :dashboards do
+    collection do
+      get :about_us
+      get :contact_us
+      get :single_job
+      get :post_job
+      get :blog
+      get :job_listing
+    end
+  end
+  # get 'about_us' => 'dashboards#about_us'
+  # get 'contact_us' => 'dashboards#contact_us'
+  #
+  # get 'single_job' => 'dashboards#single_job'
+  # get 'post_job' => 'dashboards#post_job'
+  # get 'blog' => 'dashboards#blog'
 
-  get 'single_job' => 'dashboard#single_job'
-  get 'post_job' => 'dashboard#post_job'
-  get 'blog' => 'dashboard#blog'
-
-   resources :pages do
+  resources :pages do
     collection do
       get :services
       get :single_services
@@ -18,6 +28,7 @@ Rails.application.routes.draw do
       get :testmonials
       get :ask_questions
       get :gallery
+      get :page
     end
   end
 
