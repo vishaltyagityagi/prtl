@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get :job_listing
     end
   end
+  resources :contacts, only: [:create]
   # get 'about_us' => 'dashboards#about_us'
   # get 'contact_us' => 'dashboards#contact_us'
   #

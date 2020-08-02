@@ -23,7 +23,7 @@
   <%= render partial: 'shared/header' %>
 
   <!-- HOME -->
-  <section class="section-hero overlay inner-page bg-image" style="background-image: url('/assets//hero_1.jpg');" id="home-section">
+  <section class="section-hero overlay inner-page bg-image" style="background-image: url('/assets/hero_1.jpg');" id="home-section">
     <div class="container">
       <div class="row">
         <div class="col-md-7">
@@ -42,66 +42,84 @@
       <div class="row">
         <div class="col-lg-6 mb-5">
           <h2 class="mb-4">Sign Up To JobBoard</h2>
-          <form action="#" class="p-4 border rounded">
+
+          <%= form_for(resource, as: resource_name, url: user_registration_path, html: {class: "p-4 border rounded"}) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
 
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="text-black" for="fname">Email</label>
-                <input type="text" id="fname" class="form-control" placeholder="Email address">
+                <%= f.email_field :email, required: true, autofocus: true, placeholder: "Email address", autocomplete: "email", id: "femail", class: "form-control" %>
               </div>
             </div>
+
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="text-black" for="fname">Password</label>
-                <input type="password" id="fname" class="form-control" placeholder="Password">
+                <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br/>
+                <%= f.password_field :password, required: true, autocomplete: "new-password", placeholder: "Password", id: 'fpassword', class: "form-control" %>
               </div>
             </div>
+
             <div class="row form-group mb-4">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="text-black" for="fname">Re-Type Password</label>
-                <input type="password" id="fname" class="form-control" placeholder="Re-type Password">
+                <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br/>
+                <%= f.password_field :password_confirmation, required: true, autocomplete: "password_confirmation", placeholder: "Re-type Password", id: "fname", class: "form-control" %>
               </div>
             </div>
 
             <div class="row form-group">
               <div class="col-md-12">
-                <input type="submit" value="Sign Up" class="btn px-4 btn-primary text-white">
+                <%= f.submit "Sign up", id: "edit-submit", name: "op", value: "Sign Up", class: "btn px-4 btn-primary text-white" %>
               </div>
             </div>
 
-          </form>
+          <% end %>
+
         </div>
+
 
         <div class="col-lg-6">
           <h2 class="mb-4">Log In To JobBoard</h2>
-          <form action="#" class="p-4 border rounded">
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "p-4 border rounded"}) do |f| %>
 
             <div class="row form-group">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="text-black" for="fname">Email</label>
-                <input type="text" id="fname" class="form-control" placeholder="Email address">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "fname", class: "form-control" %>
+                <!--                <input type="text" id="fname" class="form-control" placeholder="Email address">-->
               </div>
             </div>
+
             <div class="row form-group mb-4">
               <div class="col-md-12 mb-3 mb-md-0">
                 <label class="text-black" for="fname">Password</label>
-                <input type="password" id="fname" class="form-control" placeholder="Password">
+                <!--                <input type="password" id="fname" class="form-control" placeholder="Password">-->
+                <%= f.password_field :password, autocomplete: "current-password", id: "fname", class: "form-control" %>
               </div>
             </div>
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>
 
             <div class="row form-group">
               <div class="col-md-12">
-                <input type="submit" value="Log In" class="btn px-4 btn-primary text-white">
+                <%= f.submit "Log in", id: "edit-submit", name: "op", value: "Log in", class: "btn px-4 btn-primary text-white" %>
               </div>
             </div>
-
-          </form>
+          <% end %>
         </div>
 
       </div>
     </div>
   </section>
 </div>
-
-
-

@@ -62,3 +62,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'activeadmin'
+gem 'pry'
+gem 'dry-struct'
+gem "ckeditor"
+gem 'carrierwave'
+gem 'mini_magick'
+
+
