@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
   resources :contacts, only: [:create]
+  resources :partners
   # get 'about_us' => 'dashboards#about_us'
   # get 'contact_us' => 'dashboards#contact_us'
   #

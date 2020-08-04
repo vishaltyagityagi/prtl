@@ -7,16 +7,18 @@
         <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "About", about_us_dashboards_path %></li>
+          <li><%= link_to "Job Listings", job_listing_dashboards_path %></li>
+<!--          <li class="has-children">-->
+            <%#= link_to "Job Listings", job_listing_dashboards_path %>
+<!--            <ul class="dropdown">-->
+<!--              <li><%#= link_to "Job Single", single_job_dashboards_path %></li>-->
+<!--              <li><%#= link_to "Post a Job", post_job_dashboards_path %></li>-->
+<!--            </ul>-->
+<!--          </li>-->
           <li class="has-children">
-            <%= link_to "Job Listings", job_listing_dashboards_path %>
+            <%= link_to "Job Category", page_pages_path %>
             <ul class="dropdown">
-              <li><%= link_to "Job Single", single_job_dashboards_path %></li>
-              <li><%= link_to "Post a Job", post_job_dashboards_path %></li>
-            </ul>
-          </li>
-          <li class="has-children">
-            <%= link_to "Pages", page_pages_path %>
-            <ul class="dropdown">
+              <li><%= link_to "Partners", partners_path %></li>
               <li><%= link_to "Services", services_pages_path %></li>
               <li><%= link_to "Single Services", single_services_pages_path %></li>
               <li><%= link_to "Single Blog", blog_single_pages_path %></li>
@@ -52,7 +54,7 @@
             <% end %>
             <!--            <strong style="color: maroon"><%#= current_user.email %></strong>.-->
           <% else %>
-            <%= link_to new_user_registration_path, class: "btn btn-primary border-width-2 d-none d-lg-inline-block" do %>
+            <%= link_to new_user_session_path, class: "btn btn-primary border-width-2 d-none d-lg-inline-block" do %>
               <span class="mr-2 icon-lock_outline">Sign up</span>
             <% end %>
             <%= link_to new_user_session_path, class: "btn btn-primary border-width-2 d-none d-lg-inline-block" do %>

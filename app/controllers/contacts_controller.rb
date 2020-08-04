@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
   private
 
   def permit_contact_params
-    # Contact.column_names.map &:to_sym
+    # Gallery.column_names.map &:to_sym
     params.require(:contacts).permit(:first_name, :last_name, :email, :subject, :message, :phone_number)
   end
 end

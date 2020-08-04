@@ -22,6 +22,7 @@ class PagesController < ApplicationController
   end
 
   def gallery
+    @galleries = Gallery.all
   end
 
   def page
