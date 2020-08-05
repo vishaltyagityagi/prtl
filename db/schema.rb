@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_02_045510) do
+ActiveRecord::Schema.define(version: 2020_08_02_124033) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -65,6 +65,22 @@ ActiveRecord::Schema.define(version: 2020_08_02_045510) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "email"
+    t.string "job_title"
+    t.string "location"
+    t.string "job_region"
+    t.string "job_type"
+    t.string "job_description"
+    t.string "company_name"
+    t.string "tagline"
+    t.string "company_description"
+    t.string "website"
+    t.string "facebook_username"
+    t.string "twitter_username"
+    t.string "linkedin_username"
   end
 
   create_table "static_pages", force: :cascade do |t|

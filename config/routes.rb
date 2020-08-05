@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get :post_job
       get :blog
       get :job_listing
+      post :post_job
     end
   end
   resources :contacts, only: [:create]
